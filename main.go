@@ -54,7 +54,7 @@ func ConvertTimezoneName(city string)string{
 	case 2:
 		return "Berlin"
 	case 3:
-		return "ottawa"
+		return "Ottawa"
 	
 	default:
 		return "This bot dos not support you timezone"
@@ -86,7 +86,7 @@ func ReqTimeZone(baselog string ,target string , time_ string ) string{
 }
 
 func ConvertTimeZone(baseloc string,time string) string {
-	cityes := [3]string{"Tehran","Berlin","Ottawa"}
+	cityes := [3]string{"Tehran","Berlin",""}
 	var res string
 	for _ , i := range cityes  {
 		if i != baseloc {
