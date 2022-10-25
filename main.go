@@ -46,7 +46,7 @@ func ConvertTimezoneName(city string)string{
 
 	city_map["teh"] = 1
 	city_map["ber"] = 2
-	city_map["Ott"] = 3
+	city_map["ott"] = 3
 
 	switch city_map[strings.ToLower(city)]{
 	case 1:
@@ -54,7 +54,7 @@ func ConvertTimezoneName(city string)string{
 	case 2:
 		return "Berlin"
 	case 3:
-		return "Ottawa"
+		return "ottawa"
 	
 	default:
 		return "This bot dos not support you timezone"
