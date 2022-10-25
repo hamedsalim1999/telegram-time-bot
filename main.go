@@ -86,7 +86,7 @@ func ReqTimeZone(baselog string ,target string , time_ string ) string{
 }
 
 func ConvertTimeZone(baseloc string,time string) string {
-	cityes := [3]string{"Tehran","Berlin",""}
+	cityes := [3]string{"Tehran","Berlin","Ottawa"}
 	var res string
 	for _ , i := range cityes  {
 		if i != baseloc {
