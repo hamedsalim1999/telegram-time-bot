@@ -66,7 +66,7 @@ func ReqTimeZone(baselog string ,target string , time_ string ) string{
 	TIME_API_KEY := os.Getenv("TIME_API_KEY")
 	requestURL := "https://timezone.abstractapi.com/v1/convert_time/?api_key="+TIME_API_KEY+"&base_location="+baselog+"&base_datetime="+time.Now().Format("2006-01-02")+"T"+time_+"&target_location="+target
 	resp, err := http.Get(requestURL)
-
+	time.Sleep(1 * time.Second)
 	if err != nil {
         log.Fatalln(err)
     }
