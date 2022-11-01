@@ -37,7 +37,6 @@ func main() {
 			bot.Send(msg)
 		}
 	}
-	http.ListenAndServe(":5000", http.FileServer(http.Dir("/statics")))
 }
 
 func ConvertTimezoneName(city string)string{

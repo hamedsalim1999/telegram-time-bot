@@ -1,0 +1,7 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    environment:
+      BOT_API:
+      TIME_API_KEY:
