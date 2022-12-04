@@ -27,5 +27,5 @@ jobs:
       with:
         context: .
         push: true
-        tags: $GITHUB_JOB
-        labels: $GITHUB_REPOSITORY
+        tags: latest
+        labels: ${{ secrets.DOCKER_USERNAME }}/telegram-time-bot
