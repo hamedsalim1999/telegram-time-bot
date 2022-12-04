@@ -25,7 +25,6 @@ jobs:
     - name: Build and push Docker image
       uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
       with:
-        context: .
+        context: "{{defaultContext}}:mysubdir"
         push: true
-        tags: latest
-        labels: ${{ secrets.DOCKER_USERNAME }}/telegram-time-bot
+        tags: ${{ secrets.DOCKER_USERNAME }}/telegram-time-bot
