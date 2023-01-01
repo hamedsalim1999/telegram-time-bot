@@ -92,9 +92,14 @@ func ConvertTimeZone(baseloc string,time string) string {
 }
 
 func MessageDecoder(msg string) (string,string){
+	length := len(msg)
+	if length > 4{
 	city := msg[:3]
 	time := msg[4:]
 	return city , time
+	} else{
+		return "Error" , "Error"
+		}
 }
 
 func MessageResuelt(pm string)string{
