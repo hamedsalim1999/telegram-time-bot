@@ -53,7 +53,7 @@ func ConvertTimezoneName(city string)string{
 	case 2:
 		return "Berlin"
 	default:
-		return "This bot dos not support you timezone"
+		return "Error"
 	}
 
 }
@@ -99,7 +99,12 @@ func MessageDecoder(msg string) (string,string){
 
 func MessageResuelt(pm string)string{
 	baseloc_city,baseloc_time := MessageDecoder(pm)
-	msg := ConvertTimeZone(ConvertTimezoneName(baseloc_city),baseloc_time)
-	return msg
+	cityname :=  ConvertTimezoneName(baseloc_city)
+	if  cityname == "Error" {
+		return "This bot dos not support you timezone"
+	} else{
+		return ConvertTimeZone(ConvertTimezoneName(baseloc_city),baseloc_time)
+	}
+
 
 }
