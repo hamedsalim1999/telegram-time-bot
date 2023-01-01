@@ -30,7 +30,7 @@ func main() {
 	updates := bot.GetUpdatesChan(u)
 
 	for update := range updates {
-		if update.Message != nil { // If we got a message
+		if update.Message != nil { 
 			log.Printf("[%s] %s", update.Message.From.UserName, update.Message.Text)
 			msg := tgbotapi.NewMessage(update.Message.Chat.ID, MessageResuelt(update.Message.Text))
 			msg.ReplyToMessageID = update.Message.MessageID 
@@ -45,16 +45,13 @@ func ConvertTimezoneName(city string)string{
 
 	city_map["teh"] = 1
 	city_map["ber"] = 2
-	city_map["ott"] = 3
+	
 
 	switch city_map[strings.ToLower(city)]{
 	case 1:
 		return "Tehran"
 	case 2:
 		return "Berlin"
-	case 3:
-		return "Ottawa"
-	
 	default:
 		return "This bot dos not support you timezone"
 	}
@@ -65,7 +62,6 @@ func ReqTimeZone(baselog string ,target string , time_ string ) string{
 	TIME_API_KEY := os.Getenv("TIME_API_KEY")
 	requestURL := "https://timezone.abstractapi.com/v1/convert_time/?api_key="+TIME_API_KEY+"&base_location="+baselog+"&base_datetime="+time.Now().Format("2006-01-02")+"T"+time_+"&target_location="+target
 	resp, err := http.Get(requestURL)
-	time.Sleep(1 * time.Second)
 	if err != nil {
         log.Fatalln(err)
     }
@@ -85,7 +81,7 @@ func ReqTimeZone(baselog string ,target string , time_ string ) string{
 }
 
 func ConvertTimeZone(baseloc string,time string) string {
-	cityes := [3]string{"Tehran","Berlin","Ottawa"}
+	cityes := []string{"Tehran","Berlin"}
 	var res string
 	for _ , i := range cityes  {
 		if i != baseloc {
